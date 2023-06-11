@@ -1,0 +1,78 @@
+{
+  "name": "gdevelop-ide",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/gdevelop-ide/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nx/vite:build",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "outputPath": "dist/apps/gdevelop-ide"
+      },
+      "configurations": {
+        "development": {
+          "mode": "development"
+        },
+        "production": {
+          "mode": "production"
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nx/vite:dev-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "gdevelop-ide:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "gdevelop-ide:build:development",
+          "hmr": true
+        },
+        "production": {
+          "buildTarget": "gdevelop-ide:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "preview": {
+      "executor": "@nx/vite:preview-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "gdevelop-ide:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "gdevelop-ide:build:development"
+        },
+        "production": {
+          "buildTarget": "gdevelop-ide:build:production"
+        }
+      }
+    },
+    "test": {
+      "executor": "@nx/vite:test",
+      "outputs": ["coverage/apps/gdevelop-ide"],
+      "options": {
+        "passWithNoTests": true,
+        "reportsDirectory": "../../coverage/apps/gdevelop-ide"
+      }
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/gdevelop-ide/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "serve-static": {
+      "executor": "@nx/web:file-server",
+      "options": {
+        "buildTarget": "gdevelop-ide:build"
+      }
+    }
+  },
+  "tags": []
+}
