@@ -1,0 +1,2 @@
+var gdjs;(function(i){i.PixiFiltersTools.registerFilterCreator("TiltShift",new class extends i.PixiFiltersTools.PixiFilterCreator{makePIXIFilter(t,e){return new PIXI.filters.TiltShiftFilter}updatePreRender(t,e){}updateDoubleParameter(t,e,r){const l=t;e==="blur"?l.blur=r:e==="gradientBlur"&&(l.gradientBlur=r)}updateStringParameter(t,e,r){}updateBooleanParameter(t,e,r){}})})(gdjs||(gdjs={}));
+//# sourceMappingURL=tilt-shift-pixi-filter.js.map

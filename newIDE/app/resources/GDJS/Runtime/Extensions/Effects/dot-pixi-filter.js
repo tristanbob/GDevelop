@@ -1,0 +1,2 @@
+var gdjs;(function(a){a.PixiFiltersTools.registerFilterCreator("Dot",new class extends a.PixiFiltersTools.PixiFilterCreator{makePIXIFilter(t,e){return new PIXI.filters.DotFilter}updatePreRender(t,e){}updateDoubleParameter(t,e,r){const l=t;e==="scale"?l.scale=r:e==="angle"&&(l.angle=r)}updateStringParameter(t,e,r){}updateBooleanParameter(t,e,r){}})})(gdjs||(gdjs={}));
+//# sourceMappingURL=dot-pixi-filter.js.map

@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../../../../../../Extensions/Effects/tilt-shift-pixi-filter.ts"],
+  "sourcesContent": ["namespace gdjs {\n  gdjs.PixiFiltersTools.registerFilterCreator(\n    'TiltShift',\n    new (class extends gdjs.PixiFiltersTools.PixiFilterCreator {\n      makePIXIFilter(target, effectData) {\n        const tiltShiftFilter = new PIXI.filters.TiltShiftFilter();\n        return tiltShiftFilter;\n      }\n      updatePreRender(filter, target) {}\n      updateDoubleParameter(filter, parameterName, value) {\n        const tiltShiftFilter = (filter as unknown) as PIXI.filters.TiltShiftFilter;\n        if (parameterName === 'blur') {\n          tiltShiftFilter.blur = value;\n        } else if (parameterName === 'gradientBlur') {\n          tiltShiftFilter.gradientBlur = value;\n        }\n      }\n      updateStringParameter(filter, parameterName, value) {}\n      updateBooleanParameter(filter, parameterName, value) {}\n    })()\n  );\n}\n"],
+  "mappings": "AAAA,GAAU,MAAV,UAAU,EAAV,CACE,EAAK,iBAAiB,sBACpB,YACA,GAAK,cAAc,GAAK,iBAAiB,iBAAkB,CACzD,eAAe,EAAQ,EAAY,CAEjC,MADwB,IAAI,MAAK,QAAQ,gBAG3C,gBAAgB,EAAQ,EAAQ,EAChC,sBAAsB,EAAQ,EAAe,EAAO,CAClD,KAAM,GAAmB,EACzB,AAAI,IAAkB,OACpB,EAAgB,KAAO,EACd,IAAkB,gBAC3B,GAAgB,aAAe,GAGnC,sBAAsB,EAAQ,EAAe,EAAO,EACpD,uBAAuB,EAAQ,EAAe,EAAO,OAlBjD",
+  "names": []
+}

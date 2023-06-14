@@ -1,44 +1,41 @@
-# Generated files
-src/Version/VersionMetadata.js
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# compiled output
+dist
+tmp
+/out-tsc
 
 # dependencies
 node_modules
 
-# testing
-coverage
-flow-coverage
+# IDEs and editors
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
 
-# Storybook
-build-storybook
-
-# production
-build
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
 
 # misc
-.DS_Store
-.env.local
+/.sass-cache
+/connect.lock
+/coverage
+/libpeerconnection.log
 npm-debug.log
+yarn-error.log
+testem.log
+/typings
 
-# GD library
-public/libGD.js
-public/libGD.wasm
-
-# Third party editors
-public/external/piskel/piskel-editor
-public/external/piskel/piskel-editor.zip
-public/external/monaco-editor-min/*
-public/external/jfxr/jfxr-editor/*
-public/external/yarn/yarn-editor/*
-public/external/yarn/__MACOSX/
-public/external/zip.js/*
-public/external/zlib-asm/*
-public/external/__MACOSX/
-
-# Resources
-resources/GDJS
-resources/preview_node_modules
-
-# locales build files
-src/locales/_build
-src/locales/**/*.po
-src/locales/**/*.pot
+# System Files
+.DS_Store
+Thumbs.db
+node_modules
+dist

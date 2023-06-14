@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../../../../../../Extensions/Effects/noise-pixi-filter.ts"],
+  "sourcesContent": ["namespace gdjs {\n  import PIXI = GlobalPIXIModule.PIXI;\n  gdjs.PixiFiltersTools.registerFilterCreator(\n    'Noise',\n    new (class extends gdjs.PixiFiltersTools.PixiFilterCreator {\n      makePIXIFilter(target, effectData) {\n        const noiseFilter = new PIXI.filters.NoiseFilter();\n        return noiseFilter;\n      }\n      updatePreRender(filter, target) {}\n      updateDoubleParameter(filter, parameterName, value) {\n        // @ts-ignore - unsure why PIXI.filters is not recognised.\n        const noiseFilter = (filter as unknown) as PIXI.filters.NoiseFilter;\n        if (parameterName !== 'noise') {\n          return;\n        }\n        noiseFilter.noise = gdjs.PixiFiltersTools.clampValue(value, 0, 1);\n      }\n      updateStringParameter(filter, parameterName, value) {}\n      updateBooleanParameter(filter, parameterName, value) {}\n    })()\n  );\n}\n"],
+  "mappings": "AAAA,GAAU,MAAV,UAAU,EAAV,CACE,KAAO,GAAO,iBAAiB,KAC/B,EAAK,iBAAiB,sBACpB,QACA,GAAK,cAAc,GAAK,iBAAiB,iBAAkB,CACzD,eAAe,EAAQ,EAAY,CAEjC,MADoB,IAAI,GAAK,QAAQ,YAGvC,gBAAgB,EAAQ,EAAQ,EAChC,sBAAsB,EAAQ,EAAe,EAAO,CAElD,KAAM,GAAe,EACrB,AAAI,IAAkB,SAGtB,GAAY,MAAQ,EAAK,iBAAiB,WAAW,EAAO,EAAG,IAEjE,sBAAsB,EAAQ,EAAe,EAAO,EACpD,uBAAuB,EAAQ,EAAe,EAAO,OAnBjD",
+  "names": []
+}

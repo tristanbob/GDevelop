@@ -1,0 +1,2 @@
+var gdjs;(function(a){a.PixiFiltersTools.registerFilterCreator("Pixelate",new class extends a.PixiFiltersTools.PixiFilterCreator{makePIXIFilter(t,e){return new PIXI.filters.PixelateFilter(e.doubleParameters.size)}updatePreRender(t,e){}updateDoubleParameter(t,e,r){const i=t;e==="size"&&(i.size=r)}updateStringParameter(t,e,r){}updateBooleanParameter(t,e,r){}})})(gdjs||(gdjs={}));
+//# sourceMappingURL=pixelate-pixi-filter.js.map

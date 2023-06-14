@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../../../../../../Extensions/SpatialSound/spatialsoundtools.ts"],
+  "sourcesContent": ["namespace gdjs {\n  export namespace evtTools {\n    export namespace spatialSound {\n      const logger = new gdjs.Logger('Spatial Sound');\n      export const setSoundPosition = (\n        instanceContainer: gdjs.RuntimeInstanceContainer,\n        channel: integer,\n        x: float,\n        y: float,\n        z: float\n      ) => {\n        // TODO EBO The position must be transform to the scene position when it comes from a custom object.\n        const sound = instanceContainer\n          .getScene()\n          .getSoundManager()\n          .getSoundOnChannel(channel);\n        if (sound) sound.setSpatialPosition(x, y, z);\n        else\n          logger.error(\n            `Cannot set the spatial position of a non-existing sound on channel ${channel}.`\n          );\n      };\n    }\n  }\n}\n"],
+  "mappings": "AAAA,GAAU,MAAV,UAAU,EAAV,CACS,GAAU,GAAV,UAAU,EAAV,CACE,GAAU,GAAV,UAAU,EAAV,CACL,KAAM,GAAS,GAAI,GAAK,OAAO,iBACxB,AAAM,mBAAmB,CAC9B,EACA,EACA,EACA,EACA,IACG,CAEH,KAAM,GAAQ,EACX,WACA,kBACA,kBAAkB,GACrB,AAAI,EAAO,EAAM,mBAAmB,EAAG,EAAG,GAExC,EAAO,MACL,sEAAsE,SAjB7D,yCADF,iCADT",
+  "names": []
+}

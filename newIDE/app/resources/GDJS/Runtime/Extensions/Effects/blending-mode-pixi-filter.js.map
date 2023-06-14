@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../../../../../../Extensions/Effects/blending-mode-pixi-filter.ts"],
+  "sourcesContent": ["namespace gdjs {\n  import PIXI = GlobalPIXIModule.PIXI;\n  gdjs.PixiFiltersTools.registerFilterCreator(\n    'BlendingMode',\n    new (class extends gdjs.PixiFiltersTools.PixiFilterCreator {\n      makePIXIFilter(target, effectData) {\n        const blendingModeFilter = new PIXI.filters.AlphaFilter();\n        return blendingModeFilter;\n      }\n      updatePreRender(filter, target) {}\n      updateDoubleParameter(filter, parameterName, value) {\n        // @ts-ignore - unsure why PIXI.filters is not recognised.\n        const blendingModeFilter = (filter as unknown) as PIXI.filters.AlphaFilter;\n        if (parameterName === 'alpha') {\n          blendingModeFilter.alpha = value;\n        } else if (parameterName === 'blendmode') {\n          blendingModeFilter.blendMode = value;\n        }\n      }\n      updateStringParameter(filter, parameterName, value) {}\n      updateBooleanParameter(filter, parameterName, value) {}\n    })()\n  );\n}\n"],
+  "mappings": "AAAA,GAAU,MAAV,UAAU,EAAV,CACE,KAAO,GAAO,iBAAiB,KAC/B,EAAK,iBAAiB,sBACpB,eACA,GAAK,cAAc,GAAK,iBAAiB,iBAAkB,CACzD,eAAe,EAAQ,EAAY,CAEjC,MAD2B,IAAI,GAAK,QAAQ,YAG9C,gBAAgB,EAAQ,EAAQ,EAChC,sBAAsB,EAAQ,EAAe,EAAO,CAElD,KAAM,GAAsB,EAC5B,AAAI,IAAkB,QACpB,EAAmB,MAAQ,EAClB,IAAkB,aAC3B,GAAmB,UAAY,GAGnC,sBAAsB,EAAQ,EAAe,EAAO,EACpD,uBAAuB,EAAQ,EAAe,EAAO,OApBjD",
+  "names": []
+}
