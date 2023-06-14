@@ -1,0 +1,2 @@
+var gdjs;(function(l){l.PixiFiltersTools.registerFilterCreator("BulgePinch",new class extends l.PixiFiltersTools.PixiFilterCreator{makePIXIFilter(r,e){return new PIXI.filters.BulgePinchFilter}updatePreRender(r,e){}updateDoubleParameter(r,e,t){const i=r;e==="centerX"?i.center[0]=t:e==="centerY"?i.center[1]=t:e==="radius"?i.radius=t:e==="strength"&&(i.strength=l.PixiFiltersTools.clampValue(t,-1,1))}updateStringParameter(r,e,t){}updateBooleanParameter(r,e,t){}})})(gdjs||(gdjs={}));
+//# sourceMappingURL=bulge-pinch-pixi-filter.js.map

@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../../../../../../Extensions/Effects/pixelate-pixi-filter.ts"],
+  "sourcesContent": ["namespace gdjs {\n  gdjs.PixiFiltersTools.registerFilterCreator(\n    'Pixelate',\n    new (class extends gdjs.PixiFiltersTools.PixiFilterCreator {\n      makePIXIFilter(target, effectData) {\n        const pixelateFilter = new PIXI.filters.PixelateFilter(\n          effectData.doubleParameters.size\n        );\n        return pixelateFilter;\n      }\n      updatePreRender(filter, target) {}\n      updateDoubleParameter(filter, parameterName, value) {\n        const pixelateFilter = (filter as unknown) as PIXI.filters.PixelateFilter;\n        if (parameterName === 'size') {\n          pixelateFilter.size = value;\n        }\n      }\n      updateStringParameter(filter, parameterName, value) {}\n      updateBooleanParameter(filter, parameterName, value) {}\n    })()\n  );\n}\n"],
+  "mappings": "AAAA,GAAU,MAAV,UAAU,EAAV,CACE,EAAK,iBAAiB,sBACpB,WACA,GAAK,cAAc,GAAK,iBAAiB,iBAAkB,CACzD,eAAe,EAAQ,EAAY,CAIjC,MAHuB,IAAI,MAAK,QAAQ,eACtC,EAAW,iBAAiB,MAIhC,gBAAgB,EAAQ,EAAQ,EAChC,sBAAsB,EAAQ,EAAe,EAAO,CAClD,KAAM,GAAkB,EACxB,AAAI,IAAkB,QACpB,GAAe,KAAO,GAG1B,sBAAsB,EAAQ,EAAe,EAAO,EACpD,uBAAuB,EAAQ,EAAe,EAAO,OAlBjD",
+  "names": []
+}

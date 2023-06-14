@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../../../../../../Extensions/PlatformBehavior/platformtools.ts"],
+  "sourcesContent": ["namespace gdjs {\n  export namespace evtTools {\n    export namespace platform {\n      export const isOnPlatform = function (\n        objectsLists1: Hashtable<Array<gdjs.RuntimeObject>>,\n        behaviorName: string,\n        objectsLists2: Hashtable<Array<gdjs.RuntimeObject>>,\n        inverted: boolean\n      ) {\n        return gdjs.evtTools.object.twoListsTest(\n          gdjs.PlatformRuntimeBehavior.isOnPlatformTest,\n          objectsLists1,\n          objectsLists2,\n          inverted,\n          behaviorName\n        );\n      };\n    }\n  }\n}\n"],
+  "mappings": "AAAA,GAAU,MAAV,UAAU,EAAV,CACS,GAAU,GAAV,UAAU,EAAV,CACE,GAAU,GAAV,UAAU,EAAV,CACE,AAAM,eAAe,SAC1B,EACA,EACA,EACA,EACA,CACA,MAAO,GAAK,SAAS,OAAO,aAC1B,EAAK,wBAAwB,iBAC7B,EACA,EACA,EACA,MAZW,iCADF,iCADT",
+  "names": []
+}

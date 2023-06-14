@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../../../../../../Extensions/Effects/dot-pixi-filter.ts"],
+  "sourcesContent": ["namespace gdjs {\n  gdjs.PixiFiltersTools.registerFilterCreator(\n    'Dot',\n    new (class extends gdjs.PixiFiltersTools.PixiFilterCreator {\n      makePIXIFilter(target, effectData) {\n        const dotFilter = new PIXI.filters.DotFilter();\n        return dotFilter;\n      }\n      updatePreRender(filter, target) {}\n      updateDoubleParameter(filter, parameterName, value) {\n        const dotFilter = (filter as unknown) as PIXI.filters.DotFilter;\n        if (parameterName === 'scale') {\n          dotFilter.scale = value;\n        } else if (parameterName === 'angle') {\n          dotFilter.angle = value;\n        }\n      }\n      updateStringParameter(filter, parameterName, value) {}\n      updateBooleanParameter(filter, parameterName, value) {}\n    })()\n  );\n}\n"],
+  "mappings": "AAAA,GAAU,MAAV,UAAU,EAAV,CACE,EAAK,iBAAiB,sBACpB,MACA,GAAK,cAAc,GAAK,iBAAiB,iBAAkB,CACzD,eAAe,EAAQ,EAAY,CAEjC,MADkB,IAAI,MAAK,QAAQ,UAGrC,gBAAgB,EAAQ,EAAQ,EAChC,sBAAsB,EAAQ,EAAe,EAAO,CAClD,KAAM,GAAa,EACnB,AAAI,IAAkB,QACpB,EAAU,MAAQ,EACT,IAAkB,SAC3B,GAAU,MAAQ,GAGtB,sBAAsB,EAAQ,EAAe,EAAO,EACpD,uBAAuB,EAAQ,EAAe,EAAO,OAlBjD",
+  "names": []
+}

@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../../../../../../../Extensions/Firebase/B_firebasetools/D_remoteconfigtools.ts"],
+  "sourcesContent": ["namespace gdjs {\n  export namespace evtTools {\n    export namespace firebaseTools {\n      /**\n       * Remote Config Tools\n       * @namespace\n       */\n      export namespace remoteConfig {\n        /**\n         * Set the interval between auto-config updates.\n         */\n        export const setAutoUpdateInterval = (interval: integer) => {\n          firebase.remoteConfig().settings.minimumFetchIntervalMillis = interval;\n        };\n\n        /**\n         * Set the default configuration, for when starting the game offline.\n         * @param variable - A structure defining the default variables.\n         */\n        export const setDefaultConfig = (variable: gdjs.Variable) => {\n          firebase.remoteConfig().defaultConfig = variable.toJSObject();\n        };\n\n        gdjs.evtTools.firebaseTools.onAppCreated.push(() => {\n          // Synchronisation seems to be impossible when that value isn't preset.\n          firebase.remoteConfig().settings.minimumFetchIntervalMillis = -1;\n        });\n      }\n    }\n  }\n}\n"],
+  "mappings": "AAAA,GAAU,MAAV,UAAU,EAAV,CACS,GAAU,GAAV,UAAU,EAAV,CACE,GAAU,GAAV,UAAU,EAAV,CAKE,GAAU,GAAV,UAAU,EAAV,CAIE,AAAM,wBAAwB,AAAC,GAAsB,CAC1D,SAAS,eAAe,SAAS,2BAA6B,GAOnD,mBAAmB,AAAC,GAA4B,CAC3D,SAAS,eAAe,cAAgB,EAAS,cAGnD,EAAK,SAAS,cAAc,aAAa,KAAK,IAAM,CAElD,SAAS,eAAe,SAAS,2BAA6B,OAlBjD,yCALF,2CADF,iCADT",
+  "names": []
+}

@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../../../../../../Extensions/Effects/black-and-white-pixi-filter.ts"],
+  "sourcesContent": ["namespace gdjs {\n  import PIXI = GlobalPIXIModule.PIXI;\n  gdjs.PixiFiltersTools.registerFilterCreator(\n    'BlackAndWhite',\n    new (class extends gdjs.PixiFiltersTools.PixiFilterCreator {\n      makePIXIFilter(target, effectData) {\n        const colorMatrix = new PIXI.filters.ColorMatrixFilter();\n        colorMatrix.blackAndWhite(false);\n        return colorMatrix;\n      }\n      updatePreRender(filter, target) {}\n      updateDoubleParameter(filter, parameterName, value) {\n        // @ts-ignore - unsure why PIXI.filters is not recognised.\n        const colorMatrix = (filter as unknown) as PIXI.filters.ColorMatrixFilter;\n        if (parameterName !== 'opacity') {\n          return;\n        }\n        colorMatrix.alpha = gdjs.PixiFiltersTools.clampValue(value, 0, 1);\n      }\n      updateStringParameter(filter, parameterName, value) {}\n      updateBooleanParameter(filter, parameterName, value) {}\n    })()\n  );\n}\n"],
+  "mappings": "AAAA,GAAU,MAAV,UAAU,EAAV,CACE,KAAO,GAAO,iBAAiB,KAC/B,EAAK,iBAAiB,sBACpB,gBACA,GAAK,cAAc,GAAK,iBAAiB,iBAAkB,CACzD,eAAe,EAAQ,EAAY,CACjC,KAAM,GAAc,GAAI,GAAK,QAAQ,kBACrC,SAAY,cAAc,IACnB,EAET,gBAAgB,EAAQ,EAAQ,EAChC,sBAAsB,EAAQ,EAAe,EAAO,CAElD,KAAM,GAAe,EACrB,AAAI,IAAkB,WAGtB,GAAY,MAAQ,EAAK,iBAAiB,WAAW,EAAO,EAAG,IAEjE,sBAAsB,EAAQ,EAAe,EAAO,EACpD,uBAAuB,EAAQ,EAAe,EAAO,OApBjD",
+  "names": []
+}

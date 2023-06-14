@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../../../../../../Extensions/Effects/brightness-pixi-filter.ts"],
+  "sourcesContent": ["namespace gdjs {\n  import PIXI = GlobalPIXIModule.PIXI;\n  gdjs.PixiFiltersTools.registerFilterCreator(\n    'Brightness',\n    new (class extends gdjs.PixiFiltersTools.PixiFilterCreator {\n      makePIXIFilter(target, effectData) {\n        const brightness = new PIXI.filters.ColorMatrixFilter();\n        brightness.brightness(1, false);\n        return brightness;\n      }\n      updatePreRender(filter, target) {}\n      updateDoubleParameter(filter, parameterName, value) {\n        // @ts-ignore - unsure why PIXI.filters is not recognised.\n        const brightnessFilter = (filter as unknown) as PIXI.filters.ColorMatrixFilter;\n        if (parameterName !== 'brightness') {\n          return;\n        }\n        brightnessFilter.brightness(\n          gdjs.PixiFiltersTools.clampValue(value, 0, 1),\n          false\n        );\n      }\n      updateStringParameter(filter, parameterName, value) {}\n      updateBooleanParameter(filter, parameterName, value) {}\n    })()\n  );\n}\n"],
+  "mappings": "AAAA,GAAU,MAAV,UAAU,EAAV,CACE,KAAO,GAAO,iBAAiB,KAC/B,EAAK,iBAAiB,sBACpB,aACA,GAAK,cAAc,GAAK,iBAAiB,iBAAkB,CACzD,eAAe,EAAQ,EAAY,CACjC,KAAM,GAAa,GAAI,GAAK,QAAQ,kBACpC,SAAW,WAAW,EAAG,IAClB,EAET,gBAAgB,EAAQ,EAAQ,EAChC,sBAAsB,EAAQ,EAAe,EAAO,CAElD,KAAM,GAAoB,EAC1B,AAAI,IAAkB,cAGtB,EAAiB,WACf,EAAK,iBAAiB,WAAW,EAAO,EAAG,GAC3C,IAGJ,sBAAsB,EAAQ,EAAe,EAAO,EACpD,uBAAuB,EAAQ,EAAe,EAAO,OAvBjD",
+  "names": []
+}

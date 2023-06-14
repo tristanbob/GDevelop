@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../../../../../../Extensions/Effects/blur-pixi-filter.ts"],
+  "sourcesContent": ["namespace gdjs {\n  import PIXI = GlobalPIXIModule.PIXI;\n  gdjs.PixiFiltersTools.registerFilterCreator(\n    'Blur',\n    new (class extends gdjs.PixiFiltersTools.PixiFilterCreator {\n      makePIXIFilter(target, effectData) {\n        const blur = new PIXI.filters.BlurFilter();\n        return blur;\n      }\n      updatePreRender(filter, target) {}\n      updateDoubleParameter(filter, parameterName, value) {\n        if (\n          parameterName !== 'blur' &&\n          parameterName !== 'quality' &&\n          parameterName !== 'kernelSize' &&\n          parameterName !== 'resolution'\n        ) {\n          return;\n        }\n        if (parameterName === 'kernelSize') {\n          value = gdjs.PixiFiltersTools.clampKernelSize(value, 5, 15);\n        }\n        filter[parameterName] = value;\n      }\n      updateStringParameter(filter, parameterName, value) {}\n      updateBooleanParameter(filter, parameterName, value) {}\n    })()\n  );\n}\n"],
+  "mappings": "AAAA,GAAU,MAAV,UAAU,EAAV,CACE,KAAO,GAAO,iBAAiB,KAC/B,EAAK,iBAAiB,sBACpB,OACA,GAAK,cAAc,GAAK,iBAAiB,iBAAkB,CACzD,eAAe,EAAQ,EAAY,CAEjC,MADa,IAAI,GAAK,QAAQ,WAGhC,gBAAgB,EAAQ,EAAQ,EAChC,sBAAsB,EAAQ,EAAe,EAAO,CAClD,AACE,IAAkB,QAClB,IAAkB,WAClB,IAAkB,cAClB,IAAkB,cAIhB,KAAkB,cACpB,GAAQ,EAAK,iBAAiB,gBAAgB,EAAO,EAAG,KAE1D,EAAO,GAAiB,GAE1B,sBAAsB,EAAQ,EAAe,EAAO,EACpD,uBAAuB,EAAQ,EAAe,EAAO,OAzBjD",
+  "names": []
+}

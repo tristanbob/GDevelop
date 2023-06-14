@@ -1,0 +1,2 @@
+var gdjs;(function(i){const a=GlobalPIXIModule.PIXI;i.PixiFiltersTools.registerFilterCreator("Noise",new class extends i.PixiFiltersTools.PixiFilterCreator{makePIXIFilter(e,r){return new a.filters.NoiseFilter}updatePreRender(e,r){}updateDoubleParameter(e,r,t){const l=e;r==="noise"&&(l.noise=i.PixiFiltersTools.clampValue(t,0,1))}updateStringParameter(e,r,t){}updateBooleanParameter(e,r,t){}})})(gdjs||(gdjs={}));
+//# sourceMappingURL=noise-pixi-filter.js.map

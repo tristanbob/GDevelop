@@ -1,0 +1,2 @@
+var gdjs;(function(l){const i=GlobalPIXIModule.PIXI;l.PixiFiltersTools.registerFilterCreator("Blur",new class extends l.PixiFiltersTools.PixiFilterCreator{makePIXIFilter(t,e){return new i.filters.BlurFilter}updatePreRender(t,e){}updateDoubleParameter(t,e,r){e!=="blur"&&e!=="quality"&&e!=="kernelSize"&&e!=="resolution"||(e==="kernelSize"&&(r=l.PixiFiltersTools.clampKernelSize(r,5,15)),t[e]=r)}updateStringParameter(t,e,r){}updateBooleanParameter(t,e,r){}})})(gdjs||(gdjs={}));
+//# sourceMappingURL=blur-pixi-filter.js.map
